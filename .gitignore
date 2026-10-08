@@ -1,0 +1,12 @@
+# dependencies
+node_modules/
+# Next.js build output (never commit)
+.next/
+out/
+# local environment files and keys
+.env*
+!.env.example
+# misc
+.DS_Store
+*.log
+*.tsbuildinfo
