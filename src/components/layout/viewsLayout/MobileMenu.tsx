@@ -23,7 +23,7 @@ export default function Menu({ mobileNavOpen, setMobileNavOpen }: MenuProps) {
 
   const easing = cubicBezier(0.74, 0, 0.19, 1.02);
 
-  // 1. غطاء القائمة ينزلق من الأعلى إلى الأسفل
+  // 1. The menu cover slides down from the top
   const menuBackgroundVariant: Variants = {
     opened: {
       y: 0,
@@ -35,18 +35,18 @@ export default function Menu({ mobileNavOpen, setMobileNavOpen }: MenuProps) {
     closed: {
       y: "-100%",
       transition: {
-        delay: 0.5, // تأخير الإغلاق حتى تختفي الروابط أولاً
+        delay: 0.5, // delay closing until the links have disappeared
         duration: 0.6,
         ease: easing,
       },
     },
   };
 
-  // 2. الحاوية التي تنظم ظهور العناصر خلف بعضها
+  // 2. The container that staggers the appearance of its items
   const ulVariant: Variants = {
     opened: {
       transition: {
-        delayChildren: 0.4, // انتظر قليلاً حتى تنزلق الخلفية
+        delayChildren: 0.4, // wait a moment until the background has slid in
         staggerChildren: 0.1,
       },
     },
@@ -58,7 +58,7 @@ export default function Menu({ mobileNavOpen, setMobileNavOpen }: MenuProps) {
     },
   };
 
-  // 3. ظهور العناصر الفردية (تظهر من الأسفل للأعلى بعد انزلاق الخلفية)
+  // 3. Individual items appear from bottom to top after the background slides in
   const liVariant: Variants = {
     opened: {
       opacity: 1,
@@ -87,7 +87,7 @@ export default function Menu({ mobileNavOpen, setMobileNavOpen }: MenuProps) {
           variants={menuBackgroundVariant}
           className="fixed inset-0 z-[9999] bg-[#000000c9] text-white flex flex-col"
         >
-          {/* رأس القائمة مع زر الإغلاق */}
+          {/* Menu header with the close button */}
           <div className="flex justify-end p-6">
             <motion.button
               initial={{ opacity: 0 }}
@@ -100,7 +100,7 @@ export default function Menu({ mobileNavOpen, setMobileNavOpen }: MenuProps) {
             </motion.button>
           </div>
 
-          {/* قائمة الروابط */}
+          {/* Links list */}
           <div className="flex flex-col items-center justify-center flex-grow">
             <motion.ul
               variants={ulVariant}

@@ -15,7 +15,7 @@ type Patient = {
 
 type Props = {
   patients: Patient[];
-  totalPatients: number; // أو string إذا كانت تأتي كنص، لكن الأفضل number
+  totalPatients: number; // or string if it arrives as text, but number is preferred
 };
 
 export const EcommerceMetrics : React.FC<Props> = ({ patients , totalPatients}) => {

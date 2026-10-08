@@ -18,7 +18,7 @@ export default function WebsiteLayout({ children }: { children: ReactNode }) {
         initialPosition={0.08}
         crawlSpeed={200}
         height={3}
-        showSpinner={false} // يمكنك تفعيله إذا أردت سبينر بجانب الخط
+        showSpinner={false} // enable this if you want a spinner next to the progress bar
       />
       <GlobalLoader />
         <MainHeader />

@@ -13,7 +13,7 @@ function WhyMada() {
 
         <div className="rounded-xl">
           <MotionImage
-            src="/images/about-us-img-3.webp" // استخدم WebP
+            src="/images/about-us-img-3.webp" // use WebP
             alt="Dental Care"
             width={400}
             height={600}
